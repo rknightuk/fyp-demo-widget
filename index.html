@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>GitHub Status for Status Board</title>
+		
+		<meta charset="UTF-8">
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+	</head>
+
+		<script sec="comments.js"></script>
+
+		<script type="text/javascript">
+
+			var comments = [
+				{
+					"id": 22,
+					"session_id": 1,
+					"body": "Does this work on an Apache server?",
+					"method": "web",
+					"created_at": "15:21:12",
+					"updated_at": "2015-04-01 15:21:12"
+				},
+				{
+					"id": 22,
+					"session_id": 1,
+					"body": "Can we use this with MySQL?",
+					"method": "web",
+					"created_at": "15:20:15",
+					"updated_at": "2015-04-01 15:21:12"
+				},
+				{
+					"id": 22,
+					"session_id": 1,
+					"body": "How do I set this up on my computer?",
+					"method": "web",
+					"created_at": "15:17:02",
+					"updated_at": "2015-04-01 15:21:12"
+				},
+				{
+					"id": 22,
+					"session_id": 1,
+					"body": "When is the hand in date for this?",
+					"method": "web",
+					"created_at": "15:16:18",
+					"updated_at": "2015-04-01 15:21:12"
+				},
+			];
+
+			function getComments() {
+				for (var i = comments.length - 1; i >= 0; i--) {
+					var msg = comments[i].body;
+					var time = comments[i].created_at;
+
+					$('table').append('<tr><td>' + msg + '</td><td>' + time + '</td></tr>');
+
+				};
+			}
+
+			var int=self.setInterval(function(){getComments()},60000);
+
+		</script>
+	
+	<body onload="getComments()">
+	
+		<table></table>
+
+	</body>
+	
+</html>
